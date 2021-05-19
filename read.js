@@ -39,11 +39,11 @@ client.on('ready', async () => {
                 .then((response) => {
                     var array = response.data;
 
-                    for(var j = 0; j < array.sessions.length; j++)
+                    for(var j = 0; j < array.data.sessions.length; j++)
                     {
-                        if(array.sessions[j].available_capacity>0)
+                        if(array.data.sessions[j].available_capacity>0)
                         {
-                            if(array.sessions[j].min_age_limit <= arr[i].Age){
+                            if(array.data.sessions[j].min_age_limit <= arr[i].Age){
                                 arr[i].ifslot=true;
                             }
                         }
