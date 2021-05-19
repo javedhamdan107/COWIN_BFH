@@ -136,6 +136,8 @@ client.on('ready', () => {
                     )
                     .then((response) => {
                         var arr = response.data;
+                        slot = false;
+
 
                         for(var i = 0; i < arr.data.sessions.length; i++)
                         {
@@ -165,7 +167,7 @@ client.on('ready', () => {
                                 .write()
                         }
                         
-
+                        udone = false;
                         stateid=0;
                         districtid=0;
                         age=0;
