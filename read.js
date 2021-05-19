@@ -29,7 +29,7 @@ client.on('ready', async () => {
             var created = moment().format('DD/MM/YY');
             let res = await axios
                 .get(
-                    `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${arr[i].districtid}&date=${created}`,
+                    `https://cowin.rabeeh.me/api/v2/appointment/sessions/public/findByDistrict?district_id=${arr[i].districtid}&date=${created}`,
                     {
                         headers: {
                         'User-Agent':
