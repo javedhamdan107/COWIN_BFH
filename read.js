@@ -10,8 +10,7 @@ const command = require('./command.js')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 
-const adapter = new FileSync('db.json')
-const db = low(adapter)
+
 
 var arr ;
 
@@ -21,6 +20,9 @@ client.on('ready', async () => {
 
 
     async function calls(){
+        
+        const adapter = new FileSync('db.json')
+        const db = low(adapter)
 
         arr = db.get('users').value()
         if (arr)
