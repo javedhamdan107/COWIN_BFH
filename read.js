@@ -75,7 +75,7 @@ client.on('ready', async () => {
         }
     }    
 
-    var checkhours = 1, checkminutes = checkhours * 60, checkthe_interval =  20*1000;
+    var checkhours = 1, checkminutes = checkhours * 60, checkthe_interval =  checkminutes*60*1000;
     setInterval(function() {
         calls()
     }, checkthe_interval);
