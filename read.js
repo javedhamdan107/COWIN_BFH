@@ -23,7 +23,8 @@ client.on('ready', async () => {
     async function calls(){
 
         arr = db.get('users').value()
-
+        if (arr)
+        {
         for(var i = 0; i < arr.length; i++){
             const moment = require('moment');
             var created = moment().format('DD/MM/YY');
@@ -69,6 +70,7 @@ client.on('ready', async () => {
         }
 
         arr = []
+        }
     }    
 
     var checkhours = 1, checkminutes = checkhours * 60, checkthe_interval =  20*1000;
