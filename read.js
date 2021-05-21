@@ -10,14 +10,10 @@ const command = require('./command.js')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 
-
-
 var arr ;
 
 client.on('ready', async () => {
     console.log('Notification script is ready !');
-
-
 
     async function calls(){
         
@@ -60,24 +56,25 @@ client.on('ready', async () => {
                             // user.send("Vaccine is available now!");
                             // user.send(" Visit https://www.cowin.gov.in/home to get more info.");
                             user.send({embed: {
-                                color: 	15158332,
-                                description : 'Vaccine is available now!\n \nVisit https://www.cowin.gov.in/home to get more info.',
+                                author: {
+                                    name : 'Cobot',
+                                },
+                                color: 	3066993,
+                                description : `${user} , Vaccines are available now in your district !\n \nVisit https://www.cowin.gov.in/home to get more info.>`,
+                                timestamp: new Date(),
                                 footer: {
-                                icon_url: 'https://i.imgur.com/wSTFkRM.png',
+                                icon_url: 'https://i.imgur.com/nnKLeNU.png',
+                                text: "©"
                                 }
                             }})
                         });
-                        //client.get_user(arr[i].discordid).send("Vaccine is available now!")
-
                     }
-
-                                
+                               
                 }).catch((error) => {
                     console.log("Hi");
                     console.log(error);
                 })
         }
-
         arr = []
         }
     }    
@@ -89,4 +86,4 @@ client.on('ready', async () => {
 
 })
 
-client.login('ODQzNDc2NzE2ODkwNzUxMDE4.YKEa6A.UCHf9TbS5LsieXNMlYRwgQMknV4')
+client.login('')
