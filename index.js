@@ -58,7 +58,7 @@ client.on("guildCreate", (guild) => {  ;
 
 client.on('ready', () => {
     console.log('Main script is ready!');
-    client.user.setUsername("Cobot  ");
+    // client.user.setUsername("Cobot  ");
     client.user.setActivity(`_cobot help`, { type: 'LISTENING'})
         .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
         .catch(console.error);
@@ -95,17 +95,24 @@ client.on('ready', () => {
         if((vdone || udone) && (uid === message.author.id)){
             let res = await axios
                 .get(
-                    'https://cowin.rabeeh.me/api/v2/admin/location/states')
+                    'https://cdn-api.co-vin.in/api/v2/admin/location/states',
+                    {
+                        headers: {
+                            'User-Agent':
+                            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0',
+                        },
+                    },
+                )
                 .then((response) => {
                     var arr = response.data;
                     console.log(arr);
                     var cont = message.content.substring(3);
                     state_name = cont.toLowerCase();
-                    for(var i = 0; i < arr.data.states.length; i++)
+                    for(var i = 0; i < arr.states.length; i++)
                     {
-                        if(state_name === arr.data.states[i].state_name.toLowerCase())
+                        if(state_name === arr.states[i].state_name.toLowerCase())
                         {
-                            stateid=arr.data.states[i].state_id;
+                            stateid=arr.states[i].state_id;
                             break;
                         }
                     }
@@ -134,18 +141,24 @@ client.on('ready', () => {
         if(stateid && (uid === message.author.id)){
             let res = await axios
                 .get(
-                    `https://cowin.rabeeh.me/api/v2/admin/location/districts/${stateid}`,
+                    `https://cdn-api.co-vin.in/api/v2/admin/location/districts/${stateid}`,
+                    {
+                        headers: {
+                            'User-Agent':
+                            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0',
+                        },
+                    },
                 )
                 .then((response) => {
                     var arr = response.data;
 
                     var cont = message.content.substring(3);
                     district_name = cont.toLowerCase();
-                    for(var i = 0; i < arr.data.districts.length; i++)
+                    for(var i = 0; i < arr.districts.length; i++)
                     {
-                        if(district_name === arr.data.districts[i].district_name.toLowerCase())
+                        if(district_name === arr.districts[i].district_name.toLowerCase())
                         {
-                            districtid=arr.data.districts[i].district_id;
+                            districtid=arr.districts[i].district_id;
                             break;
                         }
                     }
@@ -178,18 +191,24 @@ client.on('ready', () => {
                 
                 let res = await axios
                     .get(
-                        `https://cowin.rabeeh.me/api/v2/appointment/sessions/public/findByDistrict?district_id=${districtid}&date=${created}`,
+                        `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${districtid}&date=${created}`,
+                        {
+                            headers: {
+                                'User-Agent':
+                                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0',
+                            },
+                        },
                     )
                     .then((response) => {
                         var arr = response.data;
                         slot = false;
 
 
-                        for(var i = 0; i < arr.data.sessions.length; i++)
+                        for(var i = 0; i < arr.sessions.length; i++)
                         {
-                            if(arr.data.sessions[i].available_capacity>0)
+                            if(arr.sessions[i].available_capacity>0)
                             {
-                                if(arr.data.sessions[i].min_age_limit <= age){
+                                if(arr.sessions[i].min_age_limit <= age){
                                     slot=true;
                                 }
                             }
@@ -277,18 +296,24 @@ client.on('ready', () => {
             console.log(created);
             let res = await axios
                 .get(
-                    `http://cowin.rabeeh.me/api/v2/appointment/sessions/public/findByDistrict?district_id=${user.districtid}&date=${created}`
+                    `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${districtid}&date=${created}`,
+                    {
+                        headers: {
+                            'User-Agent':
+                            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0',
+                        },
+                    },
                 )
                 .then((response) => {
                     var arr = response.data;
                     slot = false;
 
 
-                    for(var i = 0; i < arr.data.sessions.length; i++)
+                    for(var i = 0; i < arr.sessions.length; i++)
                     {
-                        if(arr.data.sessions[i].available_capacity>0)
+                        if(arr.sessions[i].available_capacity>0)
                         {
-                            if(arr.data.sessions[i].min_age_limit <= user.Age){
+                            if(arr.sessions[i].min_age_limit <= user.Age){
                                 slot=true;
                             }
                         }
