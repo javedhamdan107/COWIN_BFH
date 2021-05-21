@@ -1,1 +1,31 @@
-
+{
+  "users": [
+    {
+      "discordid": "707990740281851944",
+      "state": "kerala",
+      "district": "kottayam",
+      "Age": "47",
+      "stateid": 17,
+      "districtid": 304,
+      "ifslot": false
+    },
+    {
+      "discordid": "703997667168092321",
+      "state": "rajasthan",
+      "district": "alwar",
+      "Age": "88",
+      "stateid": 29,
+      "districtid": 512,
+      "ifslot": true
+    },
+    {
+      "discordid": "720904290029404182",
+      "state": "delhi",
+      "district": "central delhi",
+      "Age": "46",
+      "stateid": 9,
+      "districtid": 141,
+      "ifslot": true
+    }
+  ]
+}
