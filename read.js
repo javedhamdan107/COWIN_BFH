@@ -28,21 +28,22 @@ client.on('ready', async () => {
             var created = moment().format('DD/MM/YY');
             let res = await axios
                 .get(
-                    `https://cowin.rabeeh.me/api/v2/appointment/sessions/public/findByDistrict?district_id=${arr[i].districtid}&date=${created}`,
+                    `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${arr[i].districtid}&date=${created}`,
                     {
                         headers: {
-                        'User-Agent':
+                            'User-Agent':
                             'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:89.0) Gecko/20100101 Firefox/89.0',
+                        },
                     },
-                })
+                )
                 .then((response) => {
                     var array = response.data;
 
-                    for(var j = 0; j < array.data.sessions.length; j++)
+                    for(var j = 0; j < array.sessions.length; j++)
                     {
-                        if(array.data.sessions[j].available_capacity>0)
+                        if(array.sessions[j].available_capacity>0)
                         {
-                            if(array.data.sessions[j].min_age_limit <= arr[i].Age){
+                            if(array.sessions[j].min_age_limit <= arr[i].Age){
                                 arr[i].ifslot=true;
                             }
                         }
