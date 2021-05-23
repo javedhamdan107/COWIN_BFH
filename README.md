@@ -1,10 +1,27 @@
-# COWIN_BFH
-* Covid Vaccine Tracker Discord BOT
-* Our project submission to TinkerHub Build From Home 2021 . We chose the NodeJS Stack and made a Discord Bot .
-# Contents of the Repository
-* index.js is the Main file of this bot.It contains all the functionalities of the Bot except the reading part from the database.
-* read.js is the file for reading the details of the registered users of bot from the database and send them hourly notification if the vaccine is available
-* db.json is the database file which contains in the information of all the users who have registered with the database.
-* command.js is the file which handles the commands which the users give.
-# Built with
-NodeJs
+![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
+# Project Name
+Long Description about project. This project do that. This project is awesome...
+## Team members
+1. Sanjay Sunil [https://github.com/sanjaysunil34]
+2. Nandan N.K. [https://github.com/nknandan]
+## Team Id
+BFH/recqrmONntlDwZHuf/2021
+## Link to product walkthrough
+[link to video]
+## How it Works ?
+1. Explaining the working of project
+2. Embed video of project demo
+## Libraries used
+*    "axios": "^0.21.1",
+*    "curl": "^0.1.4",
+*    "discord.js": "^12.5.3",
+*    "dotenv": "^9.0.2",
+*    "lowdb": "^1.0.0",
+*    "moment": "^2.29.1",
+*    "node-strings": "^1.0.2",
+*    "nodemon": "^2.0.7"
+## How to configure
+* Create a .env file and set TOKEN=YOUR_TOKEN_NAME
+* Run the command "npm install" to install all the necessary packages.
+## How to Run
+* Run the command "node index.js"
