@@ -30,6 +30,6 @@ https://user-images.githubusercontent.com/56354755/119267708-65982a80-bc0d-11eb-
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/nandakishormpai2001"><img src="https://avatars.githubusercontent.com/u/56354755?v=400" width="180px;" alt=""/><br /><sub><b>M H Javed Khayam S</b></sub></a><br />
-    <td align="center"><a href="https://github.com/aswinjayaji"><img src="https://avatars.githubusercontent.com/u/56962781?v=400" width="180px;" alt=""/><br /><sub><b>Sanjay Sunil</b></sub></a><br />
-      <td align="center"><a href="https://github.com/Harikrishnan6336"><img src="https://avatars.githubusercontent.com/u/56962754?v=4" width="180px;" alt=""/><br /><sub><b>Nandan N.K.</b></sub></a><br />
+    <td align="center"><a href="https://github.com/javedhamdan107"><img src="https://avatars.githubusercontent.com/u/56354755?v=400" width="180px;" alt=""/><br /><sub><b>M H Javed Khayam S</b></sub></a><br />
+    <td align="center"><a href="https://github.com/sanjaysunil34"><img src="https://avatars.githubusercontent.com/u/56962781?v=400" width="180px;" alt=""/><br /><sub><b>Sanjay Sunil</b></sub></a><br />
+      <td align="center"><a href="https://github.com/nknandan"><img src="https://avatars.githubusercontent.com/u/56962754?v=4" width="180px;" alt=""/><br /><sub><b>Nandan N.K.</b></sub></a><br />
