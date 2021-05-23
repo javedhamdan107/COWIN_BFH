@@ -6,14 +6,10 @@ BFH/recqrmONntlDwZHuf/2021
 ## Link to product walkthrough
 * https://www.loom.com/share/3e63ab39e38341bfb5d0bfd983d10c66
 ## How it Works ?
-<html>
-<body>
 
-<iframe width="420" height="345" src="https://www.loom.com/share/3e63ab39e38341bfb5d0bfd983d10c66">
-</iframe>
+https://user-images.githubusercontent.com/56354755/119267708-65982a80-bc0d-11eb-9511-c55e560d5617.mp4
 
-</body>
-</html>
+
 ## Libraries used
 *    "axios": "^0.21.1",
 *    "curl": "^0.1.4",
