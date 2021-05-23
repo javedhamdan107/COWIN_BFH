@@ -1,6 +1,6 @@
 ![BFH Banner](https://trello-attachments.s3.amazonaws.com/542e9c6316504d5797afbfb9/542e9c6316504d5797afbfc1/39dee8d993841943b5723510ce663233/Frame_19.png)
 # Project Name
-Long Description about project. This project do that. This project is awesome...
+The COBOT is a discord bot which helps you to check real time vaccine availability once you register with the bot.It also gives you hourly notification if the vaccine is available in your district.You can also update the registered details and delete your registration with the bot once you get the vaccine.
 ## Team Id
 BFH/recqrmONntlDwZHuf/2021
 ## Link to product walkthrough
