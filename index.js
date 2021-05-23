@@ -296,7 +296,7 @@ client.on('ready', () => {
             console.log(created);
             let res = await axios
                 .get(
-                    `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${districtid}&date=${created}`,
+                    `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${user.districtid}&date=${created}`,
                     {
                         headers: {
                             'User-Agent':
