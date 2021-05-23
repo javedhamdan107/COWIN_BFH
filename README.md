@@ -6,3 +6,5 @@
 * read.js is the file for reading the details of the registered users of bot from the database and send them hourly notification if the vaccine is available
 * db.json is the database file which contains in the information of all the users who have registered with the database.
 * command.js is the file which handles the commands which the users give.
+# Built with
+NodeJs
