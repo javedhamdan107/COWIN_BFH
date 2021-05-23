@@ -4,10 +4,16 @@ The COBOT is a discord bot which helps you to check real time vaccine availabili
 ## Team Id
 BFH/recqrmONntlDwZHuf/2021
 ## Link to product walkthrough
-[link to video]
+* https://www.loom.com/share/3e63ab39e38341bfb5d0bfd983d10c66
 ## How it Works ?
-1. Explaining the working of project
-2. Embed video of project demo
+<html>
+<body>
+
+<iframe width="420" height="345" src="https://www.loom.com/share/3e63ab39e38341bfb5d0bfd983d10c66">
+</iframe>
+
+</body>
+</html>
 ## Libraries used
 *    "axios": "^0.21.1",
 *    "curl": "^0.1.4",
