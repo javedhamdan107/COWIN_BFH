@@ -88,6 +88,28 @@ client.on('ready', () => {
             slot=false;
             vdone=true;
             message.reply('Enter your state :   _s <state>')
+
+            let filter = m => m.author.id === uid
+            message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 30000,
+            errors: ['time']
+            })
+            .then(() => {
+            console.log('Hi');
+            })
+            .catch(() => {
+                message.reply('Your registration has timed out');
+                uid=0;
+                stateid=0;
+                districtid=0;
+                age=0;
+                slot;
+                slot=false;
+                vdone = false;
+                udone = false;
+                
+            });
         }
     })
 
@@ -119,6 +141,27 @@ client.on('ready', () => {
                     console.log('stateid : ' + stateid);
                     if(stateid){
                         message.reply('Enter your district :  _d <district>')
+                        let filter = m => m.author.id === uid
+                        message.channel.awaitMessages(filter, {
+                        max: 1,
+                        time: 30000,
+                        errors: ['time']
+                        })
+                        .then(() => {
+                        console.log('Hi');
+                        })
+                        .catch(() => {
+                            message.reply('Your registration has timed out');
+                            uid=0;
+                            stateid=0;
+                            districtid=0;
+                            age=0;
+                            slot;
+                            slot=false;
+                            vdone = false;
+                            udone = false;
+                            
+                        });
                     }else{
                         message.reply("Enter a valid state")
                         console.log('else');
@@ -166,6 +209,27 @@ client.on('ready', () => {
                     console.log('stateid : ' + districtid);
                     if(districtid){
                         message.reply('Enter your age :   _a <age>')
+                        let filter = m => m.author.id === uid
+                        message.channel.awaitMessages(filter, {
+                        max: 1,
+                        time: 30000,
+                        errors: ['time']
+                        })
+                        .then(() => {
+                        console.log('Hi');
+                        })
+                        .catch(() => {
+                            message.reply('Your registration has timed out');
+                            uid=0;
+                            stateid=0;
+                            districtid=0;
+                            age=0;
+                            slot;
+                            slot=false;
+                            vdone = false;
+                            udone = false;
+                            
+                        });
                     }else{
                         message.reply("Enter a valid district")
                     }
@@ -367,6 +431,28 @@ client.on('ready', () => {
         if(user !== undefined){
             udone = true;
             message.reply('Enter your state as : _s <state>')
+
+            let filter = m => m.author.id === uid
+            message.channel.awaitMessages(filter, {
+            max: 1,
+            time: 30000,
+            errors: ['time']
+            })
+            .then(() => {
+            console.log('Hi');
+            })
+            .catch(() => {
+                message.reply('Your registration has timed out');
+                uid=0;
+                stateid=0;
+                districtid=0;
+                age=0;
+                slot;
+                slot=false;
+                vdone = false;
+                udone = false;
+                
+            });
         }else{
             message.reply({embed: {
                 color: 	15158332,
@@ -508,3 +594,4 @@ client.on('ready', () => {
 })
 
 client.login(process.env.TOKEN)
+
