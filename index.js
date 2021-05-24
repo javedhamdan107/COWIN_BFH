@@ -72,8 +72,11 @@ client.on('ready', () => {
     slot=false;
     var vdone = false;
     var udone = false;
+    var sd = false;
+    var dd = false;
+    var ad = false;
 
-    command(client, 'cobot register', async (message) => {
+    command(client, 'register', async (message) => {
         if(uid !== 0){
             message.reply({embed: {
                 color: 	15158332,
@@ -87,19 +90,27 @@ client.on('ready', () => {
             age=0;
             slot=false;
             vdone=true;
+            sd = false;
+            dd = false;
+            ad = false;
             message.reply('Enter your state :   _s <state>')
 
-            let filter = m => m.author.id === uid
+            let filter = m => {
+                m.author.id === uid,
+                m.content.split(' ')[0] == '_s'
+            }
             message.channel.awaitMessages(filter, {
             max: 1,
             time: 30000,
             errors: ['time']
             })
             .then(() => {
-            console.log('Hi');
+                console.log('Hi');
             })
             .catch(() => {
-                message.reply('Your registration has timed out');
+                if(sd == true){
+                    message.reply('Your registration has timed out');
+                }
                 uid=0;
                 stateid=0;
                 districtid=0;
@@ -108,6 +119,9 @@ client.on('ready', () => {
                 slot=false;
                 vdone = false;
                 udone = false;
+                sd = false;
+                dd = false;
+                ad = false;
                 
             });
         }
@@ -140,8 +154,12 @@ client.on('ready', () => {
                     }
                     console.log('stateid : ' + stateid);
                     if(stateid){
+                        sd = true;
                         message.reply('Enter your district :  _d <district>')
-                        let filter = m => m.author.id === uid
+                        let filter = m => {
+                            m.author.id === uid,
+                            m.content.split(' ')[0] == '_d'
+                        }
                         message.channel.awaitMessages(filter, {
                         max: 1,
                         time: 30000,
@@ -151,7 +169,9 @@ client.on('ready', () => {
                         console.log('Hi');
                         })
                         .catch(() => {
-                            message.reply('Your registration has timed out');
+                            if(dd == true){
+                                message.reply('Your registration has timed out');
+                            }
                             uid=0;
                             stateid=0;
                             districtid=0;
@@ -160,6 +180,9 @@ client.on('ready', () => {
                             slot=false;
                             vdone = false;
                             udone = false;
+                            sd = false;
+                            dd = false;
+                            ad = false;
                             
                         });
                     }else{
@@ -208,8 +231,12 @@ client.on('ready', () => {
 
                     console.log('stateid : ' + districtid);
                     if(districtid){
+                        dd = true;
                         message.reply('Enter your age :   _a <age>')
-                        let filter = m => m.author.id === uid
+                        let filter = m => {
+                            m.author.id === uid,
+                            m.content.split(' ')[0] == '_a'
+                        }
                         message.channel.awaitMessages(filter, {
                         max: 1,
                         time: 30000,
@@ -219,7 +246,9 @@ client.on('ready', () => {
                         console.log('Hi');
                         })
                         .catch(() => {
-                            message.reply('Your registration has timed out');
+                            if(ad == true){
+                                message.reply('Your registration has timed out');
+                            }
                             uid=0;
                             stateid=0;
                             districtid=0;
@@ -228,6 +257,9 @@ client.on('ready', () => {
                             slot=false;
                             vdone = false;
                             udone = false;
+                            sd = false;
+                            dd = false;
+                            ad = false;
                             
                         });
                     }else{
@@ -250,6 +282,7 @@ client.on('ready', () => {
         if(districtid && (uid === message.author.id)){
             age = message.content.substring(3);
             if(age > 17){
+                ad = true;
                 const moment = require('moment');
                 var created = moment().format('DD/MM/YY');
                 
@@ -327,6 +360,9 @@ client.on('ready', () => {
                         slot=false;
                         vdone=false;
                         uid = 0;
+                        sd = false;
+                        dd = false;
+                        ad = false;
                         
                     }).catch((error) => {
                         console.log("Hi");
@@ -432,7 +468,10 @@ client.on('ready', () => {
             udone = true;
             message.reply('Enter your state as : _s <state>')
 
-            let filter = m => m.author.id === uid
+            let filter = m => {
+                m.author.id === uid,
+                m.content.split(' ')[0] == '_s'
+            }
             message.channel.awaitMessages(filter, {
             max: 1,
             time: 30000,
@@ -442,7 +481,9 @@ client.on('ready', () => {
             console.log('Hi');
             })
             .catch(() => {
-                message.reply('Your registration has timed out');
+                if(sd == true){
+                    message.reply('Your registration has timed out');
+                }
                 uid=0;
                 stateid=0;
                 districtid=0;
@@ -451,7 +492,9 @@ client.on('ready', () => {
                 slot=false;
                 vdone = false;
                 udone = false;
-                
+                sd = false;
+                ad = false;
+                dd = false;
             });
         }else{
             message.reply({embed: {
@@ -506,6 +549,9 @@ client.on('ready', () => {
         slot=false;
         vdone = false;
         udone = false;
+        sd = false;
+        dd = false;
+        ad = false;
         message.reply({embed: {
             color: 	9807270,
             description : `<@${message.author.id}>, Registration exited`,
