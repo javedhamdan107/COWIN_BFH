@@ -76,7 +76,7 @@ client.on('ready', () => {
     var dd = false;
     var ad = false;
 
-    command(client, 'register', async (message) => {
+    command(client, 'cobot register', async (message) => {
         if(uid !== 0){
             message.reply({embed: {
                 color: 	15158332,
@@ -108,7 +108,7 @@ client.on('ready', () => {
                 console.log('Hi');
             })
             .catch(() => {
-                if(sd == true){
+                if(sd == false){
                     message.reply('Your registration has timed out');
                 }
                 uid=0;
@@ -120,8 +120,6 @@ client.on('ready', () => {
                 vdone = false;
                 udone = false;
                 sd = false;
-                dd = false;
-                ad = false;
                 
             });
         }
@@ -169,7 +167,7 @@ client.on('ready', () => {
                         console.log('Hi');
                         })
                         .catch(() => {
-                            if(dd == true){
+                            if(dd == false){
                                 message.reply('Your registration has timed out');
                             }
                             uid=0;
@@ -180,9 +178,7 @@ client.on('ready', () => {
                             slot=false;
                             vdone = false;
                             udone = false;
-                            sd = false;
                             dd = false;
-                            ad = false;
                             
                         });
                     }else{
@@ -246,7 +242,7 @@ client.on('ready', () => {
                         console.log('Hi');
                         })
                         .catch(() => {
-                            if(ad == true){
+                            if(ad == false){
                                 message.reply('Your registration has timed out');
                             }
                             uid=0;
@@ -257,8 +253,6 @@ client.on('ready', () => {
                             slot=false;
                             vdone = false;
                             udone = false;
-                            sd = false;
-                            dd = false;
                             ad = false;
                             
                         });
@@ -360,9 +354,9 @@ client.on('ready', () => {
                         slot=false;
                         vdone=false;
                         uid = 0;
-                        sd = false;
-                        dd = false;
-                        ad = false;
+                        sd = true;
+                        dd = true;
+                        ad = true;
                         
                     }).catch((error) => {
                         console.log("Hi");
@@ -481,7 +475,7 @@ client.on('ready', () => {
             console.log('Hi');
             })
             .catch(() => {
-                if(sd == true){
+                if(sd == false){
                     message.reply('Your registration has timed out');
                 }
                 uid=0;
@@ -493,10 +487,9 @@ client.on('ready', () => {
                 vdone = false;
                 udone = false;
                 sd = false;
-                ad = false;
-                dd = false;
             });
         }else{
+            uid = 0;
             message.reply({embed: {
                 color: 	15158332,
                 description : `<@${message.author.id}>, You have not yet registered !`,
@@ -549,9 +542,9 @@ client.on('ready', () => {
         slot=false;
         vdone = false;
         udone = false;
-        sd = false;
-        dd = false;
-        ad = false;
+        sd = true;
+        dd = true;
+        ad = true;
         message.reply({embed: {
             color: 	9807270,
             description : `<@${message.author.id}>, Registration exited`,
